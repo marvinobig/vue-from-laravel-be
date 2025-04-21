@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostsRequest;
 use App\Http\Requests\UpdatePostsRequest;
-use App\Models\Posts;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -13,7 +13,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Posts::all();
+        $posts = Post::all();
 
         return view('dashboard', ['posts' => $posts]);
     }
@@ -31,7 +31,7 @@ class PostsController extends Controller
      */
     public function store(StorePostsRequest $request)
     {
-        Posts::create($request->validated());
+        Post::create($request->validated());
 
         return redirect(route('home'))->with('message', 'post created');
     }
@@ -39,7 +39,7 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Posts $posts)
+    public function edit(Post $posts)
     {
         return view('edit-posts', ['post' => $posts]);
     }
@@ -47,7 +47,7 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostsRequest $request, Posts $posts)
+    public function update(UpdatePostsRequest $request, Post $posts)
     {
         $posts->update($request->validated());
 
@@ -57,7 +57,7 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Posts $posts)
+    public function destroy(Post $posts)
     {
         $posts->delete();
 
