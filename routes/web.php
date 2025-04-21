@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostsController::class, 'index']);
 
-Route::resource('/posts', PostsController::class);
+Route::resource('/posts', PostsController::class)->except(['show', 'index']);
