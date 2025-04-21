@@ -33,7 +33,7 @@ class PostsController extends Controller
     {
         Posts::create($request->validated());
 
-        return redirect('/')->with('message', 'post created');
+        return redirect(route('home'))->with('message', 'post created');
     }
 
     /**
@@ -51,7 +51,7 @@ class PostsController extends Controller
     {
         $posts->update($request->validated());
 
-        return redirect('/')->with('message', 'post updated');
+        return redirect(route('home'))->with('message', 'post updated');
     }
 
     /**
@@ -61,6 +61,6 @@ class PostsController extends Controller
     {
         $posts->delete();
 
-        return redirect('/')->with('message', 'post deleted');
+        return redirect(route('home'))->with('message', 'post deleted');
     }
 }
