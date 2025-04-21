@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
-class PostsFactory extends Factory
+class PostFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,8 @@ class PostsFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->unique()->title(),
-            'body' => fake()->unique()->paragraphs(5),
+            'title' => fake()->unique()->words(3, true),
+            'body' => fake()->paragraphs(5, true),
             'status' => fake()->boolean()
         ];
     }

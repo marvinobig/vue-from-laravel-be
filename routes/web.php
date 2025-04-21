@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PostsController::class, 'index'])->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::resource('/posts', PostsController::class)->except(['show', 'index']);
+Route::resource('/posts', PostController::class)->except(['show', 'index']);
