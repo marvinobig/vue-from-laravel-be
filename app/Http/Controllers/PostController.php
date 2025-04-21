@@ -39,17 +39,17 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $posts)
+    public function edit(Post $post)
     {
-        return view('edit-posts', ['post' => $posts]);
+        return view('edit-posts', ['post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostsRequest $request, Post $posts)
+    public function update(UpdatePostsRequest $request, Post $post)
     {
-        $posts->update($request->validated());
+        $post->update($request->validated());
 
         return redirect(route('home'))->with('message', 'post updated');
     }
@@ -57,9 +57,9 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $posts)
+    public function destroy(Post $post)
     {
-        $posts->delete();
+        $post->delete();
 
         return redirect(route('home'))->with('message', 'post deleted');
     }
