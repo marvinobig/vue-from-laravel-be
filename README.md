@@ -1,6 +1,6 @@
 # Vue from Laravel Backend
 
-This repository demonstrates how to build a Laravel backend (MVC + API) to power a Vue.js frontend. It serves as a foundational example for integrating Laravel with Vue.
+A Laravel backend (MVC + API) to power a Vue.js frontend.
 
 ## Features
 
