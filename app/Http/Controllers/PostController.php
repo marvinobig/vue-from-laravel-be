@@ -31,9 +31,9 @@ class PostController extends Controller
      */
     public function store(StorePostsRequest $request)
     {
-        Post::create($request->validated());
+        $newPost = Post::create($request->validated());
 
-        return redirect(route('home'))->with('message', 'post created');
+        return redirect(route('home'))->with('message', "post '{$newPost->title}' created");
     }
 
     /**
@@ -51,7 +51,7 @@ class PostController extends Controller
     {
         $post->update($request->validated());
 
-        return redirect(route('home'))->with('message', 'post updated');
+        return redirect(route('home'))->with('message', "post '{$post->title}' updated");
     }
 
     /**
@@ -61,6 +61,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect(route('home'))->with('message', 'post deleted');
+        return redirect(route('home'))->with('message', "post '{$post->title}' deleted");
     }
 }
