@@ -11,10 +11,15 @@
                 <p>{{ $post->title }}</p>
 
                 <div class="flex flex-wrap gap-2">
-                    <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer" href="{{ route('posts.edit', $post->id) }}">Edit</a>
-                    <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer" href="{{ route('posts.destroy', $post->id) }}">Delete</a>
+                    <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer"
+                        href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                    <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer"
+                        href="{{ route('posts.destroy', $post->id) }}">Delete</a>
                 </div>
             </article>
         @endforeach
+    </section>
+    <section>
+        {{ $posts->links() }}
     </section>
 </x-layouts.site>
