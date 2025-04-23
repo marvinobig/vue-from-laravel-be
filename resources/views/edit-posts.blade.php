@@ -13,12 +13,12 @@
 
         <section class="flex flex-col gap-2">
             <label class="capitalize font-bold text-lg" for="title">title</label>
-            <input type="text" name="title" id="title" value="{{ $post->title }}">
+            <input class="border border-gray-800 rounded-lg p-2" type="text" name="title" id="title" value="{{ $post->title }}">
         </section>
 
         <section class="flex flex-col gap-2">
             <label class="capitalize font-bold text-lg" for="body">body</label>
-            <textarea class="resize-none min-h-[400px]" name="body" id="body">{{ $post->body }}</textarea>
+            <textarea class="border border-gray-800 rounded-lg p-2 resize-none min-h-[400px]" name="body" id="body">{{ $post->body }}</textarea>
         </section>
 
         <section class="flex items-center gap-2">
