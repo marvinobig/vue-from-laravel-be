@@ -22,7 +22,7 @@ class UpdatePostsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|unique:posts|string|max:255',
+            'title' => 'required|string|max:255',
             'body' => 'required|string',
             'status' => 'boolean'
         ];
@@ -31,7 +31,6 @@ class UpdatePostsRequest extends FormRequest
     public function messages():array {
         return [
             'title.required' => 'the title is required',
-            'title.unique' => 'a post with the same title already exists',
             'title.string' => 'the title should be a word/words',
             'title.max' => 'the title is too long',
 
