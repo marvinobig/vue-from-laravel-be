@@ -19,7 +19,7 @@
             </article>
         @endforeach
     </section>
-    <section>
+    <section class="my-10">
         {{ $posts->links() }}
     </section>
 </x-layouts.site>
