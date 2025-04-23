@@ -13,8 +13,16 @@
                 <div class="flex flex-wrap gap-2">
                     <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer"
                         href="{{ route('posts.edit', $post->id) }}">Edit</a>
-                    <a class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer"
-                        href="{{ route('posts.destroy', $post->id) }}">Delete</a>
+
+                    <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="capitalize rounded-lg bg-gray-800 py-2 px-4 text-white cursor-pointer"
+                            type="submit">
+                            Delete
+                        </button>
+                    </form>
                 </div>
             </article>
         @endforeach
