@@ -27,6 +27,7 @@
             </article>
         @endforeach
     </section>
+    
     <section class="my-10">
         {{ $posts->links() }}
     </section>
