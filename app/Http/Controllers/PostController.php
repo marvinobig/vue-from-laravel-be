@@ -49,7 +49,10 @@ class PostController extends Controller
      */
     public function update(UpdatePostsRequest $request, Post $post)
     {
-        $post->update($request->validated());
+        $data = $request->validated();
+        $data['status'] = $request->has('status');
+
+        $post->update($data);
 
         return redirect(route('home'))->with('message', "post '{$post->title}' updated");
     }
